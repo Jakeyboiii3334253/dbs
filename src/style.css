@@ -1,0 +1,62 @@
+:root {
+  --bg: #050809;
+  --panel: rgba(7, 13, 11, 0.74);
+  --green: #6dff9c;
+  --amber: #ffb62e;
+  --white: #e8f0ea;
+  --dim: #5f7a68;
+  --line: rgba(109, 255, 156, 0.28);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--white);
+  font-family: "Consolas", "Lucida Console", "Courier New", monospace;
+  font-size: 13px;
+}
+
+#app { position: fixed; inset: 0; }
+#app canvas { display: block; width: 100%; height: 100%; outline: none; cursor: grab; touch-action: none; }
+#app canvas:active { cursor: grabbing; }
+
+.panel {
+  position: fixed;
+  padding: 10px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--green);
+  pointer-events: none;   /* never block mouse-look / cockpit clicks */
+  user-select: none;
+}
+.panel-title { color: var(--green); margin-bottom: 6px; letter-spacing: 0.04em; }
+.dim { color: var(--dim); }
+
+#status { top: 12px; left: 12px; min-width: 230px; }
+#status .row { display: flex; justify-content: space-between; gap: 18px; line-height: 1.55; }
+#status .row span { color: var(--dim); }
+#status .row b { font-weight: normal; color: var(--white); }
+#status #s-mode.on { color: var(--amber); }
+
+#help { top: 12px; right: 12px; max-width: 340px; }
+#help .row { display: flex; gap: 12px; line-height: 1.55; }
+#help .key { flex: 0 0 104px; color: var(--amber); }
+#help .desc { color: var(--white); }
+
+#notice, #fatal {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 18px;
+  background: rgba(20, 12, 4, 0.9);
+  border: 1px solid var(--amber);
+  color: var(--amber);
+}
+#notice { bottom: 24px; }
+#fatal { top: 40%; max-width: 560px; text-align: center; line-height: 1.5; }
+
+.hidden { display: none; }

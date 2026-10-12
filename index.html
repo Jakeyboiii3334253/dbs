@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanguard — Combat Flight Simulator</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div id="status" class="panel">
+      <div class="panel-title">Vanguard · Stage 1 foundation</div>
+      <div class="row"><span>Camera</span><b id="s-cam">–</b></div>
+      <div class="row"><span>Flight</span><b id="s-mode">–</b></div>
+      <div class="row"><span>Speed</span><b id="s-spd">–</b></div>
+      <div class="row"><span>Altitude</span><b id="s-alt">–</b></div>
+      <div class="row"><span>Heading</span><b id="s-hdg">–</b></div>
+      <div class="row"><span>Graphics</span><b id="s-gfx">–</b></div>
+      <div class="row"><span>FPS</span><b id="s-fps">–</b></div>
+    </div>
+
+    <div id="help" class="panel">
+      <div class="panel-title">Controls <span class="dim">(H to hide)</span></div>
+      <div id="help-rows"></div>
+    </div>
+
+    <div id="notice" class="hidden"></div>
+    <div id="fatal" class="hidden"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
